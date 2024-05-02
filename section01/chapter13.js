@@ -12,7 +12,7 @@ main(() =>   {
   // console.log("i am sub");
 }); 
 
-// 2. 콜백함수의 활용
+// 2. 콜백함수의 활용(간략하게는 화살표사용)
 
 function repeat(count, callback) {
   for (let idx = 1; idx <= count; idx++) {
@@ -20,11 +20,11 @@ function repeat(count, callback) {
   }  
 }
 
-repeat(5, function (idx) {
+repeat(5, (idx) => {
   console.log(idx)
 });
 
-repeat(5, function(idx) {
+repeat(5, (idx) => {
   console.log(idx * 2);
 })
 
