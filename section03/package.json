@@ -17,5 +17,8 @@
   "bugs": {
     "url": "https://github.com/kimyoda/react_basic_study/issues"
   },
-  "homepage": "https://github.com/kimyoda/react_basic_study#readme"
+  "homepage": "https://github.com/kimyoda/react_basic_study#readme",
+  "dependencies": {
+    "randomcolor": "^0.6.2"
+  }
 }
