@@ -18,7 +18,7 @@ const mockData = [
     date: new Date().getTime(),
   },
   {
-    id: 0,
+    id: 2,
     isDone: false,
     content: "이력서 살펴보기",
     date: new Date().getTime(),
@@ -26,7 +26,7 @@ const mockData = [
 ];
 
 function App() {
-  const [todos, setTodos] = useState([mockData]);
+  const [todos, setTodos] = useState(mockData);
   const idRef = useRef(3);
 
   const onCreate = (content) => {
@@ -44,7 +44,7 @@ function App() {
     <div className="App">
       <Header />
       <Editor onCreate={onCreate} />
-      <List />
+      <List todos={todos} />
     </div>
   );
 }
