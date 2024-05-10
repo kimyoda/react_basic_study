@@ -3,7 +3,7 @@ import "./Editor.css";
 
 const Editor = ({ onCreate }) => {
   const [content, setContent] = useState("");
-  const contentRef = useRef();
+  const inputRef = useRef();
   // 이벤트 헨들러
   const onChangeContent = (e) => {
     setContent(e.target.value);
@@ -17,7 +17,7 @@ const Editor = ({ onCreate }) => {
 
   const onsubmit = () => {
     if (content === "") {
-      contentRef.current.focus();
+      inputRef.current.focus();
       return;
     }
     onCreate(content);
@@ -27,7 +27,7 @@ const Editor = ({ onCreate }) => {
   return (
     <div className="Editor">
       <input
-        ref={contentRef}
+        ref={inputRef}
         value={content}
         onKeyDown={onKeydown}
         onChange={onChangeContent}
