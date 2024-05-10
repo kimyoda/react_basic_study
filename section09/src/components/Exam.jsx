@@ -1,7 +1,7 @@
 import { act, useReducer } from "react";
 
 // reducer : 변환기
-//  -> 상태를 실제로 변환시키는 변환기 역할
+//  -> 상태를 실제로 변환시키는 변환기 역할(if 문보다는 switch 문을 더 선호)
 function reducer(state, action) {
   switch (action.type) {
     case "INCREASE":
