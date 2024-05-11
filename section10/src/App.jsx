@@ -44,6 +44,8 @@ function App() {
   const [todos, dispatch] = useReducer(reducer, mockData);
   const idRef = useRef(3);
 
+  // 함수들은 객체로 되고, 생성될 때 마다 주소값이 다르다.
+
   const onCreate = (content) => {
     dispatch({
       type: "CREATE",
