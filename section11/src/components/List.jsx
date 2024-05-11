@@ -1,10 +1,11 @@
 import { useContext, useMemo, useState } from "react";
 import "./List.css";
 import TodoItem from "./TodoItem";
-import { TodoContext } from "../App";
+import { TodoStateContext } from "../App";
 
 const List = () => {
-  const { todos } = useContext(TodoContext);
+  // 객체가 아니기에 그대로 받아와야함. value props로 전달된 값을 꺼내와서 받음.
+  const todos = useContext(TodoStateContext);
   const [search, setSearch] = useState("");
 
   // 이벤트 핸들러
