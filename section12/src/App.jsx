@@ -55,7 +55,7 @@ function App() {
     // 새로운 일기를 추가하는 기능
     dispatch({
       type: "CREATE",
-      date: {
+      data: {
         id: idRef.current++,
         createDate,
         emotionId,
