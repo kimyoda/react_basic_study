@@ -3,29 +3,8 @@ import Button from "./Button";
 import "./Editor.css";
 import EmotionItem from "./EmotionItem";
 import { useNavigate } from "react-router-dom";
-
-const emotionList = [
-  {
-    emotionId: 1,
-    emotionName: "기분 매우좋음",
-  },
-  {
-    emotionId: 2,
-    emotionName: "기분 좋음",
-  },
-  {
-    emotionId: 3,
-    emotionName: "기분 무난",
-  },
-  {
-    emotionId: 4,
-    emotionName: "기분 우울",
-  },
-  {
-    emotionId: 5,
-    emotionName: "기분 절망",
-  },
-];
+import { emotionList } from "../util/constants";
+import { getStringedDate } from "../util/get-stringed-date";
 
 const Editor = ({ onSubmit, initData }) => {
   const [input, setInput] = useState({
@@ -44,22 +23,6 @@ const Editor = ({ onSubmit, initData }) => {
       });
     }
   }, [initData]);
-
-  const getStringedDate = (targetDate) => {
-    // 날짜 -> YYYY-MM-DD
-    let year = targetDate.getFullYear();
-    let month = targetDate.getMonth() + 1;
-    let date = targetDate.getDate();
-
-    if (month < 10) {
-      month = `0${month}`;
-    }
-    if (date < 10) {
-      date = `0${date}`;
-    }
-
-    return `${year}-${month}-${date}`;
-  };
 
   const onChangeInput = (e) => {
     let name = e.target.name;
