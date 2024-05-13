@@ -14,6 +14,7 @@ const DiaryList = ({ data }) => {
     setSortType(e.target.value);
   };
 
+  // sort 함수 활용하여 정렬기준 생성
   const getSortedData = () => {
     return data.toSorted((a, b) => {
       if (sortType === "oldest") {
