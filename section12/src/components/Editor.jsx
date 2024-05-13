@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Button from "./Button";
 import "./Editor.css";
 import EmotionItem from "./EmotionItem";
@@ -27,7 +27,7 @@ const emotionList = [
   },
 ];
 
-const Editor = ({ onSubmit }) => {
+const Editor = ({ onSubmit, initData }) => {
   const [input, setInput] = useState({
     createDate: new Date(),
     emotionId: 3,
@@ -35,6 +35,15 @@ const Editor = ({ onSubmit }) => {
   });
 
   const nav = useNavigate();
+
+  useEffect(() => {
+    if (initData) {
+      setInput({
+        ...initData,
+        createDate: new Date(Number(initData.createDate)),
+      });
+    }
+  }, [initData]);
 
   const getStringedDate = (targetDate) => {
     // 날짜 -> YYYY-MM-DD
